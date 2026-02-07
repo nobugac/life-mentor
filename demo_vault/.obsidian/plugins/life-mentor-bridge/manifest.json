@@ -1,0 +1,10 @@
+{
+  "id": "life-mentor-bridge",
+  "name": "Life Mentor Bridge",
+  "version": "0.1.0",
+  "minAppVersion": "1.3.0",
+  "description": "Bridge Life Mentor server flows to daily notes.",
+  "author": "life-mentor",
+  "authorUrl": "",
+  "isDesktopOnly": true
+}

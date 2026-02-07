@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+# Server data (contains personal/LLM data)
+server/data/
+server/vision_results/
+server/vision_images/
+server/debug/
+.backup/
+
+# Secrets and credentials
+server/set_env.sh
+server/.vscode/.env
+*.local.yaml
+config.local.yaml
+
+# Environment
+.env
+.env.*
+*.local
+
+# Android (excluded from hackathon submission)
+android-app/
+
+# Conda packages (should never be tracked)
+server/.conda_pkgs/
+
+# Claude/Codex config
+.claude/
+CLAUDE.md
+CODEX.md
+SPECS/
+docs/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+nohup.out
+
+# Diary (personal data)
+diary/
+*.local.json

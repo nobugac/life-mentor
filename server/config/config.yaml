@@ -1,0 +1,49 @@
+# Life Mentor config
+# Paths are relative to the workspace root or use environment variables.
+# Copy this file to config.local.yaml and adjust paths for your setup.
+
+vault_root: "../demo_vault"
+diary_day_root: "../demo_vault/diary/2026/day"
+diary_week_root: "../demo_vault/diary/2026/week"
+weekly_template_path: ""
+week_write_root: "../demo_vault/diary/2026/week"
+values_dir: "../demo_vault/values"
+goals_dir: "../demo_vault/goals"
+projects_dir: "../demo_vault/projects"
+alignment_path: ""
+backup_root: "./data/.backup"
+data_root: "./data"
+state_root: "./data/state"
+cache_root: "./data/cache"
+records_root: "./data/records"
+llm_results_dir: "./data/llm"
+llm_timeout_seconds: 60
+mobile_data_root: "./data/mobile"
+garmin_data_root: "./data/garmin"
+garmin_import_root: ""
+auto_update_daily_note: false
+vision_results_dir: "./vision_results"
+vision_images_dir: "./vision_images"
+daily_template_path: ""
+write_root: "../demo_vault/diary/2026/day"
+allow_status_write: false
+advice_sleep_low_minutes: 360
+advice_sleep_medium_minutes: 420
+advice_stress_high: 60
+advice_screen_high_minutes: 240
+advice_hrv_low_ms: 30
+advice_trend_windows_days: "7,30"
+vision_prompt_path: "./prompts/vision_daily_raw_capture_v1.txt"
+morning_prompt_path: "./prompts/morning_suggestions_v1_en.txt"
+evening_prompt_path: "./prompts/evening_summary_v1_en.txt"
+alignment_prompt_path: "./prompts/alignment_mirror_v2_en.txt"
+morning_provider: "gemini"
+morning_model: "gemini-3-flash"
+evening_provider: "gemini"
+evening_model: "gemini-3-flash"
+alignment_provider: "gemini"
+alignment_model: "gemini-3-flash"
+debug_root: "./debug"
+debug_vision_results_dir: "./debug/vision_results"
+debug_state_dir: "./debug/state"
+debug_llm_dir: "./debug/llm"

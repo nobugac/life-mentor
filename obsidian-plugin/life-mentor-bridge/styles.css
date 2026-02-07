@@ -1,0 +1,10 @@
+.life-mentor-modal textarea {
+  width: 100%;
+  min-height: 140px;
+}
+
+.life-mentor-modal__actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}

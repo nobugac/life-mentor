@@ -1,0 +1,96 @@
+Base URL: http://127.0.0.1:8010
+Date: 2026-01-24
+==> /alignment (debug)
+{
+    "date": "2026-01-24",
+    "metrics": {
+        "sleep_hours": 7.3,
+        "sleep_score": 88,
+        "screen_time_hours": null,
+        "night_screen_hours": null
+    },
+    "snapshot": "\u5f53\u524d\u7761\u7720\u8d28\u91cf\u826f\u597d\uff0c\u8eab\u4f53\u6062\u590d\u72b6\u6001\u5e73\u7a33\uff0c\u538b\u529b\u6c34\u5e73\u9002\u4e2d\u3002\u6d3b\u8dc3\u76ee\u6807\u805a\u7126\u4e8e\u5065\u5eb7\u3001\u5411\u5185\u63a2\u7d22\u3001\u5bb6\u5ead\u53caNW-4\u9879\u76ee\u63a8\u8fdb\u3002",
+    "pattern": "\u8fd1\u671f\u7761\u7720\u65f6\u957f\u8f83\u5468\u5747\u503c\u7565\u6709\u4e0b\u964d\uff0c\u4f46\u538b\u529b\u6c34\u5e73\u540c\u6b65\u964d\u4f4e\uff1b\u9700\u7ef4\u6301\u826f\u597d\u7761\u7720\u4e60\u60ef\u4ee5\u652f\u6491\u5065\u5eb7\u53caNW-4\u9879\u76ee\u6240\u9700\u7684\u7cbe\u529b\u72b6\u6001\u3002",
+    "active_goals": [
+        "\u5065\u5eb7",
+        "\u5411\u5185\u6c42",
+        "\u5bb6\u5ead",
+        "NW-4"
+    ],
+    "goal_options": [
+        "\u5065\u5eb7",
+        "\u5411\u5185\u6c42",
+        "\u5bb6\u5ead",
+        "\u94b1",
+        "NW-4",
+        "Use AI build something",
+        "q1\u65e0\u6548\u624b\u673a\u65f6\u95f4\u65e5\u5747\u5c0f\u4e8e1.5h",
+        "\u5065\u8eab\u5165\u95e8",
+        "\u589e\u91cd\u523065kg",
+        "\u6295\u8d44\u6536\u76ca\u738726\u5e74\u8fbe\u6807",
+        "\u7406\u8d22\u5b66\u4e60",
+        "\u81ea\u7531\u6cf31km",
+        "\u8bb0\u5f55\u81ea\u5df1",
+        "\u8bfb20\u672c\u4e66"
+    ],
+    "timing": {
+        "load_state_ms": 1,
+        "goals_ms": 0,
+        "goal_graph_ms": 3,
+        "trends_ms": 18,
+        "llm_ms": 34618,
+        "total_ms": 34643
+    }
+}
+
+==> /morning (debug)
+{
+    "file": "/Users/sean/workspace/life/note/diary/2026/day/2026-01-24.md",
+    "action": "morning",
+    "status": {
+        "sleep_hours": 7.3,
+        "sleep_score": 88,
+        "screen_time_hours": null,
+        "night_screen_hours": null
+    },
+    "suggestions": [
+        {
+            "id": "b64d4c868bd2493ab49b15d551e2cb0e",
+            "type": "micro",
+            "text": "\u5348\u540e\u8fdb\u884c10\u5206\u949f\u6162\u8d70\uff0c\u4fc3\u8fdb\u8840\u6db2\u5faa\u73af\u540c\u65f6\u7f13\u89e3\u4e45\u5750\u75b2\u52b3",
+            "source": "\u4eca\u65e5\u4efb\u52a1\u4e0e\u5efa\u8bae\u56f4\u7ed5\u5065\u5eb7\uff08\u5065\u8eab\u5165\u95e8\u3001\u589e\u91cd\u3001\u7761\u7720\u7ef4\u62a4\uff09\u53ca\u5411\u5185\u6c42\uff08RL\u5b66\u4e60\uff09\u4ef7\u503c\u89c2\u5c55\u5f00\uff0c\u7ed3\u5408\u5f53\u524d\u4f18\u79c0\u7684\u7761\u7720\u72b6\u6001\uff0c\u65e2\u5de9\u56fa\u5065\u5eb7\u57fa\u7840\uff0c\u53c8\u63a8\u8fdb\u77e5\u8bc6\u5b66\u4e60\u4e0e\u76ee\u6807\u8fbe\u6210",
+            "related_goal": null
+        }
+    ],
+    "timing": {
+        "file_write_ms": 1,
+        "goal_graph_ms": 1,
+        "load_state_ms": 0,
+        "trends_ms": 12,
+        "llm_ms": 99795,
+        "total_ms": 99820
+    }
+}
+
+==> /evening (debug)
+{
+    "file": "/Users/sean/workspace/life/note/diary/2026/day/2026-01-24.md",
+    "action": "evening",
+    "analysis": {
+        "summary": "2026\u5e741\u670824\u65e5\u5468\u516d\uff0c\u65e5\u8bb0\u6b63\u6587\u4e3aping\uff0c\u968f\u624b\u8bb0\u5f55\u63d0\u5230\u6709\u70b9\u7d2f\uff0c\u65e0\u5176\u4ed6\u5177\u4f53\u6d3b\u52a8\u8bb0\u5f55\u3002"
+    },
+    "tomorrow_suggestions": [
+        {
+            "id": "9180f86e42c444b8b377d9762a8ef863",
+            "type": "tomorrow",
+            "text": "\u8865\u5145\u4eca\u65e5\u65e5\u5fd7\u8be6\u7ec6\u5185\u5bb9"
+        }
+    ],
+    "timing": {
+        "file_write_ms": 0,
+        "goal_graph_ms": 3,
+        "records_ms": 0,
+        "llm_ms": 27700,
+        "total_ms": 27709
+    }
+}

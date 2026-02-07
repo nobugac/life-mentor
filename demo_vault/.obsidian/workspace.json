@@ -1,0 +1,274 @@
+{
+  "main": {
+    "id": "5324373015726ba8",
+    "type": "split",
+    "children": [
+      {
+        "id": "4509724f8bf84da7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e7a7b303c61786dc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "LifeMentor_Extra/Pages/Record_Chat.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Record_Chat"
+            }
+          },
+          {
+            "id": "49549d9fd7290313",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "values/Health.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Health"
+            }
+          },
+          {
+            "id": "a8536538394b735d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "goals/Sleep 7.5h+.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Sleep 7.5h+"
+            }
+          },
+          {
+            "id": "f9003c54491f3453",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "projects/No phone after 10 PM.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "No phone after 10 PM"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "demo-left",
+    "type": "split",
+    "children": [
+      {
+        "id": "demo-left-tabs",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "demo-files",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "3f8e1b6bd837fba6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "655cc20cb91b2bdc",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "demo-right",
+    "type": "split",
+    "children": [
+      {
+        "id": "d63b76afaf0c0944",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "48c450f2935382f1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "LifeMentor_Extra/Home.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Home 的反向链接列表"
+            }
+          },
+          {
+            "id": "460f1bfd834f6b15",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "LifeMentor_Extra/Home.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Home 的出链列表"
+            }
+          },
+          {
+            "id": "d71f745de176b1d6",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "975a7d1ae60a0133",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "LifeMentor_Extra/Home.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Home 的大纲"
+            }
+          },
+          {
+            "id": "53f5df9e200085bf",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          },
+          {
+            "id": "fc4f5e431829037d",
+            "type": "leaf",
+            "state": {
+              "type": "journal-calendar",
+              "state": {},
+              "icon": "calendar-days",
+              "title": "Calendar"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "templater-obsidian:Templater": false,
+      "mermaid-tools:Open Mermaid Toolbar": false,
+      "homepage:Open homepage": false,
+      "periodic-notes:Open this week": false
+    }
+  },
+  "active": "e7a7b303c61786dc",
+  "lastOpenFiles": [
+    "LifeMentor_Extra/Pages/Night.md",
+    "LifeMentor_Extra/Pages/Record_Chat.md",
+    "LifeMentor_Extra/Home.md",
+    "diary/2026/day/2026-02-07.md",
+    "LifeMentor_Extra/Pages/Today_Action.md",
+    "LifeMentor_Extra/Pages/Today_Input.md",
+    "LifeMentor_Extra/Pages/Alignment.md",
+    "projects/No phone after 10 PM.md",
+    "goals/Sleep 7.5h+.md",
+    "values/Health.md",
+    "goals/Read 20 books in 2026.md",
+    "goals/Monthly parent check-in.md",
+    "goals/Daily movement 30min.md",
+    "projects/Daily reading 20min.md",
+    "projects/Daily reflection 5min.md",
+    "projects/Morning walk 15min.md",
+    "values/Inner Growth.md",
+    "values/Family.md",
+    "values/Values.md",
+    "LifeMentor_Extra/Pages/Today.md",
+    "diary/2026/day/2026-02-06.md",
+    "projects/Projects.md",
+    "goals/Morning walk 15min.md",
+    "projects/Sunday family dinner.md",
+    "projects",
+    "goals/Goals.md",
+    "diary/2026/day/2026-02-09.md",
+    "diary/2026/week",
+    "diary/2026/day",
+    "diary/2026",
+    "diary",
+    "goals",
+    "values"
+  ]
+}

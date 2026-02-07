@@ -1,0 +1,139 @@
+你将看到的是我上传的一组截图，可能来自以下来源之一或多个：
+- 手机的「屏幕使用时间 / 应用使用情况」
+- 智能手表 App 的「首页 / 睡眠 / 睡眠阶段 / 身体状况」
+
+截图组合是不确定的：
+- 可能只有手机截图
+- 可能只有手表截图
+- 也可能两者同时存在
+
+你的任务只有一件事：
+**从截图中准确识别“真实可见的信息”，并进行结构化输出，不要进行任何分析、解释或评价。**
+
+====================
+一、识别规则（非常重要）
+====================
+- 只提取截图中明确显示的数据
+- 不推断、不补全、不做合理猜测
+- 无法识别或未出现的字段必须填 null
+- 允许部分结构为空，但 JSON 结构必须完整
+
+====================
+二、手机使用信息（若截图中存在）
+====================
+请识别以下字段：
+
+- 统计口径（如：今日 / 昨日）
+- 屏幕使用总时长
+- 与前一日的对比变化（若存在）
+- 应用使用列表（App 名称 + 使用时长）
+- 解锁次数
+- 首次解锁时间
+- 系统显示的使用变化提示（若存在）
+
+====================
+三、手表睡眠 & 身体信息（若截图中存在）
+====================
+请识别以下字段：
+
+1. 睡眠
+- 总睡眠时间
+- 睡眠评分（若存在）
+- 睡眠持续时间显示（若存在）
+- 深睡 / 浅睡 / REM / 清醒 时长
+
+2. HRV（重点）
+- HRV 状态
+- HRV 数值（毫秒）
+- HRV 7 天平均值（毫秒，若存在）
+
+3. 心率
+- 静息心率（bpm）
+- 心率显示值（首页仪表盘值，若存在）
+
+4. 呼吸 / 血氧
+- 脉搏血氧 SpO₂（百分比，若存在）
+- 呼吸变化指数（若存在）
+
+5. 身体状态
+- 不安稳状态次数
+- 身体电量变化（Body Battery）
+- 压力值
+
+====================
+四、统一结构化输出（必须）
+====================
+请将所有识别结果整理为 **一个 JSON 对象**，结构固定如下：
+
+{
+  "record_type": "daily_raw_capture",
+
+  "phone_usage": {
+    "day_scope": null,
+    "screen_time": {
+      "total": null,
+      "total_minutes": null,
+      "delta_vs_previous": null
+    },
+    "app_usage": [
+      { "app": null, "duration": null, "minutes": null }
+    ],
+    "unlock": {
+      "count": null,
+      "first_unlock_time": null,
+      "delta_vs_previous": null
+    },
+    "system_notes": []
+  },
+
+  "watch_health": {
+    "day_scope": null,
+    "pages_detected": [],
+
+    "sleep": {
+      "total": null,
+      "total_minutes": null,
+      "score": null,
+      "duration_display": null,
+      "stages": {
+        "deep": { "duration": null, "minutes": null },
+        "light": { "duration": null, "minutes": null },
+        "rem": { "duration": null, "minutes": null },
+        "awake": { "duration": null, "minutes": null }
+      }
+    },
+
+    "hrv": {
+      "status": null,
+      "value_ms": null,
+      "seven_day_avg_ms": null
+    },
+
+    "heart_rate": {
+      "resting_bpm": null,
+      "display_bpm": null
+    },
+
+    "respiration": {
+      "variation_index": null
+    },
+
+    "spo2": {
+      "value_percent": null
+    },
+
+    "recovery": {
+      "restlessness_events": null,
+      "body_battery_change": null,
+      "stress_level": null
+    }
+  }
+}
+
+====================
+五、严格输出约束
+====================
+- 只输出 JSON，不要输出任何其他文字
+- JSON 字段名、层级、结构必须完全一致
+- 不允许添加未定义字段
+- 时间字段需同时提供「hh:mm」与「分钟」

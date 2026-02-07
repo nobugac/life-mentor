@@ -1,0 +1,51 @@
+{
+  "date": "2026-02-09",
+  "metrics": {
+    "sleep_hours": 7.9,
+    "sleep_score": 87,
+    "screen_time_hours": 3.0,
+    "night_screen_hours": null
+  },
+  "snapshot": "Slept 7h55m (score 87) last night; phone screen time 3h (180 mins) with 72 unlocks.",
+  "pattern": "Over 7 days, sleep increased (7h55m vs 7h40m avg), screen time decreased (3h vs 7h40m avg), stress dropped (18 vs 21.8 avg), HRV improved (55 vs 51.1 avg).",
+  "active_goals": [
+    "Health",
+    "Inner Growth",
+    "Family"
+  ],
+  "goal_options": [
+    "健康",
+    "向内求",
+    "家庭",
+    "钱",
+    "NW-4",
+    "Use AI build something",
+    "q1无效手机时间日均小于1.5h",
+    "健身入门",
+    "增重到65kg",
+    "投资收益率26年达标",
+    "理财学习",
+    "自由泳1km",
+    "记录自己",
+    "读20本书"
+  ],
+  "value_board": [
+    {
+      "value": "Health",
+      "role": "main",
+      "trend": "up",
+      "summary": "Sleep duration and quality improved; stress levels decreased."
+    },
+    {
+      "value": "Inner Growth",
+      "role": "sub",
+      "trend": "down",
+      "summary": "Screen time reduced vs 7-day average, supporting focus on learning goals."
+    }
+  ],
+  "focus": {
+    "name": "Screen Curfew",
+    "intent": "Daily phone screen time <1.5h (90 mins)",
+    "why": "To meet Inner Growth goal and enhance recovery and focus."
+  }
+}

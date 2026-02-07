@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LifeMentor Chat</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;600;700&display=swap');
+
+    :root {
+      --bg: #f7f7f8;
+      --panel: #ffffff;
+      --text: #0b0f1a;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --accent: #111827;
+      --user-bg: #111827;
+      --user-text: #ffffff;
+      --ai-bg: #ffffff;
+      --ai-border: #e5e7eb;
+      --shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Atkinson Hyperlegible", "Noto Sans", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .app {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 18px;
+      border-bottom: 1px solid var(--border);
+      background: var(--panel);
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .brand .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .status {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    main {
+      flex: 1;
+      overflow: auto;
+      padding: 22px 18px 28px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .msg {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .msg.user {
+      justify-content: flex-end;
+    }
+
+    .avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      flex: 0 0 28px;
+    }
+
+    .msg.user .avatar {
+      background: #d1d5db;
+      color: #111827;
+      order: 2;
+    }
+
+    .bubble {
+      max-width: 70%;
+      padding: 12px 14px;
+      border-radius: 16px 16px 16px 4px;
+      border: 1px solid var(--ai-border);
+      background: var(--ai-bg);
+      box-shadow: var(--shadow);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .msg.user .bubble {
+      background: var(--user-bg);
+      color: var(--user-text);
+      border-color: var(--user-bg);
+      border-radius: 16px 16px 4px 16px;
+      box-shadow: none;
+    }
+
+    .meta {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    .composer {
+      border-top: 1px solid var(--border);
+      background: var(--panel);
+      padding: 12px 18px 16px;
+      position: sticky;
+      bottom: 0;
+    }
+
+    .composer-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      gap: 8px;
+      align-items: flex-end;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 8px 10px;
+      background: #f9fafb;
+    }
+
+    .composer textarea {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      resize: none;
+      min-height: 36px;
+      max-height: 140px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text);
+    }
+
+    .icon-btn {
+      border: none;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: var(--text);
+    }
+
+    .icon-btn:hover {
+      border-color: #111827;
+    }
+
+    .send-btn {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+
+    .helper {
+      max-width: 760px;
+      margin: 8px auto 0;
+      font-size: 12px;
+      color: var(--muted);
+      padding: 0 6px;
+    }
+
+    @media (max-width: 720px) {
+      .bubble {
+        max-width: 84%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="topbar">
+      <div class="brand"><span class="dot"></span>LifeMentor Chat</div>
+      <div class="status">本地原型 · OpenAI 风格</div>
+    </div>
+
+    <main>
+      <div class="container">
+        <div class="msg ai">
+          <div class="avatar">LM</div>
+          <div>
+            <div class="bubble">今天想从哪里开始？你可以一句话说清楚当前最困扰你的点。</div>
+            <div class="meta">系统 · 刚刚</div>
+          </div>
+        </div>
+
+        <div class="msg user">
+          <div class="bubble">最近睡前总刷手机，第二天精力很差。</div>
+          <div class="avatar">你</div>
+        </div>
+
+        <div class="msg ai">
+          <div class="avatar">LM</div>
+          <div>
+            <div class="bubble">我们先做一个最小动作：今晚 23:00 把手机放到客厅充电。你觉得阻力最大的点是什么？</div>
+            <div class="meta">系统 · 1 分钟前</div>
+          </div>
+        </div>
+
+        <div class="msg user">
+          <div class="bubble">主要是会忘记，或者临睡前还想看看消息。</div>
+          <div class="avatar">你</div>
+        </div>
+      </div>
+    </main>
+
+    <div class="composer">
+      <div class="composer-inner">
+        <label class="icon-btn" for="file-input" title="上传图片">📎</label>
+        <input id="file-input" type="file" hidden />
+        <textarea rows="1" placeholder="Message LifeMentor..."></textarea>
+        <button class="icon-btn send-btn" title="发送">➤</button>
+      </div>
+      <div class="helper">Shift + Enter 换行 · Enter 发送（示意）</div>
+    </div>
+  </div>
+
+  <script>
+    const API_BASE = "http://127.0.0.1:8010";
+    const container = document.querySelector(".container");
+    const textarea = document.querySelector(".composer textarea");
+    const sendBtn = document.querySelector(".send-btn");
+    const statusEl = document.querySelector(".status");
+
+    function formatTime() {
+      const now = new Date();
+      return now.toLocaleTimeString("zh-CN", { hour: "2-digit", minute: "2-digit" });
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement("div");
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function appendMessage(text, role) {
+      const msg = document.createElement("div");
+      msg.className = `msg ${role}`;
+      const escapedText = escapeHtml(text);
+      if (role === "user") {
+        msg.innerHTML = `<div class="bubble">${escapedText}</div><div class="avatar">你</div>`;
+      } else {
+        msg.innerHTML = `
+          <div class="avatar">LM</div>
+          <div>
+            <div class="bubble">${escapedText}</div>
+            <div class="meta">${formatTime()}</div>
+          </div>
+        `;
+      }
+      container.appendChild(msg);
+      msg.scrollIntoView({ behavior: "smooth" });
+    }
+
+    async function sendMessage() {
+      const text = textarea.value.trim();
+      if (!text) return;
+
+      appendMessage(text, "user");
+      textarea.value = "";
+      sendBtn.disabled = true;
+      statusEl.textContent = "正在思考...";
+
+      try {
+        const res = await fetch(`${API_BASE}/chat`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            message: text,
+            date: new Date().toISOString().slice(0, 10),
+          }),
+        });
+        const data = await res.json();
+        if (data.error) {
+          appendMessage(`错误: ${data.error}`, "ai");
+        } else {
+          const reply = data.parsed?.reply || data.parsed?.action || "已处理";
+          appendMessage(reply, "ai");
+        }
+        statusEl.textContent = "已连接";
+      } catch (e) {
+        appendMessage(`连接错误: ${e.message}`, "ai");
+        statusEl.textContent = "连接失败";
+      } finally {
+        sendBtn.disabled = false;
+      }
+    }
+
+    sendBtn.addEventListener("click", sendMessage);
+    textarea.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+      }
+    });
+
+    // Check server connectivity
+    (async function checkConnection() {
+      try {
+        const res = await fetch(`${API_BASE}/`, { method: "GET" });
+        if (res.ok || res.status === 401) {
+          statusEl.textContent = "已连接";
+        } else {
+          statusEl.textContent = "服务异常";
+        }
+      } catch (e) {
+        statusEl.textContent = "服务未启动";
+      }
+    })();
+  </script>
+</body>
+</html>
